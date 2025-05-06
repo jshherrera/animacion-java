@@ -1,0 +1,56 @@
+body {
+    background: #000000;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .heart {
+    width: 100px;
+    height: 90px;
+    position: absolute;
+    transform: rotate(-45deg);
+    animation: latido 1s infinite, flotar 2s ease-out forwards;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background: inherit;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 50px;
+    top: 0;
+  }
+  
+  @keyframes latido {
+    0%, 100% {
+      transform: rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.2);
+    }
+  }
+  
+  @keyframes flotar {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px) scale(1.5);
+    }
+  }
